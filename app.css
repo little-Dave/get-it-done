@@ -25,6 +25,10 @@
   color: white;
 }
 
+.fire-text {
+  color: #FF3900;
+}
+
 .hide {
   display: none;
 }

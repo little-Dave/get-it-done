@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", function(){
   const loginForm = document.querySelector("#login-form")
   const loginPage = document.querySelector("#login-page")
   const body = document.querySelector("#body")
+  const navbar = document.querySelector("#nav")
+  const leave = document.querySelector("#leave")
+  let navUser = document.querySelector("#nav-user")
+  let currentUser = undefined
 
   loginForm.addEventListener("submit", function(){
     event.preventDefault();
@@ -12,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
     fetch(userUrl)
       .then(parseJson)
-      .then(logResponse)
+      // .then(logResponse)
+      .then(getCurrentUser)
       .then(hideLoginPage)
       .then(transitionToList)
 
@@ -22,16 +27,38 @@ document.addEventListener("DOMContentLoaded", function(){
     return response.json();
   }
 
+  function getCurrentUser(response){
+    currentUser = response;
+  }
+
   function hideLoginPage(){
-    loginPage.classList.add("hide")
+    loginPage.classList.add("hide");
+  }
+
+  function specifyNavText(){
+    navUser.innerText = `${currentUser.name}'s  `;
   }
 
   function transitionToList(){
-    body.classList.add("offWhiteBackground")
+    body.classList.add("off-white-background");
+    // specifyNavText();
+    navbar.classList.remove("hide");
   }
+
+  leave.addEventListener("mouseover", function(){
+    event.target.classList.add("fire-text")
+    event.target.addEventListener("mouseout", function(){
+      event.target.classList.remove("fire-text")
+    })
+  })
+
+  leave.addEventListener("click", function(){
+    location.reload();
+  })
 
   function logResponse(response){
     console.log(response);
+    return response;
   }
 
 })

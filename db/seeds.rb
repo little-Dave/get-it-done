@@ -6,4 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(username: "lit", name: "Dave")
+User.create(username: "test", name: "Paul")
+User.create(username: "testing", name: "Mike")
+User.create(username: "tested", name: "Dan")
+
+Project.create(name: "Mod 3 project", description: "Asynchronous SPA using vJS and Rails", notes: "Make a plan and stick to it, making accommodations where needed.", user_id: 2)
+Project.create(name: "Denver Coffee", description: "Backburner no more", notes: "Measure twice, cut once", user_id: 3)
+Project.create(name: "Other Thing", description: "you know, that other thing", notes: "revise and implement", user_id: 3)

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,900i&display=swap');
+
+.vertical-center {
+  position: absolute;
+  top: 45%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.roboto400 {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 400;
+}
+
+.roboto900i {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 55px;
+}
+
+.light-it-up {
+  background-color: #FF3900;
+  color: white;
+}
+
+.hide {
+  display: none;
+}
+
+

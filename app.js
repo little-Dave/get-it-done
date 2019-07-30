@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   const loginForm = document.querySelector("#login-form")
   const loginPage = document.querySelector("#login-page")
+  const body = document.querySelector("#body")
 
   loginForm.addEventListener("submit", function(){
     event.preventDefault();
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function(){
       .then(parseJson)
       .then(logResponse)
       .then(hideLoginPage)
+      .then(transitionToList)
 
   })
   
@@ -22,6 +24,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
   function hideLoginPage(){
     loginPage.classList.add("hide")
+  }
+
+  function transitionToList(){
+    body.classList.add("offWhiteBackground")
   }
 
   function logResponse(response){

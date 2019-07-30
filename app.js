@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     fetch(userUrl)
       .then(parseJson)
-      // .then(logResponse)
+      .then(logResponse)
       .then(getCurrentUser)
       .then(hideLoginPage)
       .then(transitionToList)

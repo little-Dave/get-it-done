@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function(){
   const body = document.querySelector("#body")
   const navbar = document.querySelector("#nav")
   const leave = document.querySelector("#leave")
+  const projectsList = document.querySelector("#projects-list")
   let navUser = document.querySelector("#nav-user")
   let currentUser = undefined
 
@@ -43,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function(){
     body.classList.add("off-white-background");
     // specifyNavText();
     navbar.classList.remove("hide");
+    projectsList.classList.remove("hide");
   }
 
   leave.addEventListener("mouseover", function(){

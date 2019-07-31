@@ -8,11 +8,15 @@ document.addEventListener("DOMContentLoaded", function(){
   const showPgDescription = document.querySelector("#show-page-description")
   const showPgNotes = document.querySelector("#show-page-notes")
   const backToListIcon = document.querySelector("#back-to-list-icon")
+  const doneButton = document.querySelector("#done-button")
   const body = document.querySelector("#body")
   const navbar = document.querySelector("#nav")
   const leave = document.querySelector("#leave")
   let navUser = document.querySelector("#nav-user")
   let currentUser = undefined
+  let userBaseUrl = `http://localhost:3000/users/`
+  let projectsUrl = `http://localhost:3000/projects/`
+  
 
   loginForm.addEventListener("submit", function(){
     event.preventDefault();
@@ -59,6 +63,43 @@ document.addEventListener("DOMContentLoaded", function(){
 
   backToListIcon.addEventListener("click", transitionToListFromShow)
 
+  doneButton.addEventListener("click", deleteProject)
+
+  function deleteProject(){
+    fetch(`${projectsUrl}${event.target.name}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    updateList();
+    returnToUpdatedList();
+  }
+
+  function updateList(){
+    projects = Array.from(document.querySelectorAll("li"));
+    projects.find(liToDelete)
+  }
+
+  function liToDelete(project){
+    if (project.name == event.target.name){
+      project.remove();
+    }
+  }
+
+  function returnToUpdatedList(){
+    showPage.classList.add("hide");
+    listPage.classList.remove("hide");
+    console.log(event.target)
+  }
+
+  // function congratulate(response){
+  //   const possibleResponses = ["Way to go, Ace", "Damn. You're good.", "Killin' it!", "A+", "Keep it up!"];
+  //   let thisReponse = possibleResponses[Math.floor(Math.random()*possibleResponses.length)];
+  //   alert(thisReponse);
+  //   return response;
+  // }
+
   function transitionToShowProject(){
     listPage.classList.add("hide");
     let thisProject = currentUser.projects.find(matchingProject);
@@ -76,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function(){
     showPgTitle.innerText = thisProject.name;
     showPgDescription.innerText = thisProject.description;
     showPgNotes.innerText = thisProject.notes;
+    doneButton.name = thisProject.id;
   }
 
   function createProjectListCards(){
@@ -85,8 +127,9 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 
   function displayProjectListCard(project){
-    let li = document.createElement("div");
+    let li = document.createElement("li");
     li.classList.add("container");
+    li.name = project.id;
 
     let firstDiv = document.createElement("div");
     firstDiv.classList.add("card", "list-card");

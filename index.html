@@ -18,6 +18,7 @@
 </head>
 
 <body id="body">
+  <!-- NAV -->
   <nav id="nav" class="navbar white-background sticky-top hide">
     <span id="nav-text" class="navbar-text roboto900iNav new-black">
       <span id="nav-user" class="roboto300i"></span>GETTING IT <span class="fire-text">DONE </span> 
@@ -25,21 +26,26 @@
     <span id="leave" class="fas fa-sign-out-alt fa-lg cursor-pointer"></span>
   </nav>
 
+  <!-- SHOW -->
   <div id="show-page" class="container hide">
     <div class="card">
       <div class="card-body">
-        <h2 class="roboto900i">example</h2>  
-        <p class="roboto400">this is the thing we put here</p>
-        <p class="roboto300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et justo sed libero semper maximus. In felis sapien, posuere id orci eu, fermentum efficitur magna. Maecenas et libero a erat volutpat bibendum nec at sapien. Nam hendrerit faucibus nisl. Morbi sed ipsum blandit, consectetur risus lacinia, placerat tortor. Aenean auctor in nulla sed consequat. Donec dignissim est mollis fringilla venenatis. Etiam sit amet magna vehicula metus pretium laoreet commodo bibendum dolor.
-
-            Aenean diam arcu, mollis ac tellus nec, convallis fringilla enim. Donec hendrerit pharetra placerat. Vestibulum dapibus aliquet mi, sit amet placerat orci aliquam nec. Duis consectetur at nisi rhoncus imperdiet. Etiam sed est ipsum. Nam velit eros, luctus quis tincidunt in, feugiat vel massa. Donec metus sapien, suscipit sit amet dolor nec, dapibus tempor nisl. Vivamus suscipit gravida nulla non pellentesque.</p>
+        <h2 id="show-page-title" class="roboto900i">title goes here</h2>  
+        <p id="show-page-description" class="roboto400">description goes here</p>
+        <p id="show-page-notes" class="roboto300">notes go here</p>
       </div>
-      <div class="card-footer text-right custom-footer-show">
-        <button class="btn light-it-up-inverse roboto900iNav">DONE</button>
+      <div class="card-footer custom-footer-show">
+        <span id="back-to-list-icon" class="cursor-pointer fas fa-arrow-left fa-lg align-self-start"></span>
+        <div class="row justify-content-end">
+          <!-- <span id="delete-icon" class="far fa-trash-alt white-icon fa-lg"></span> -->
+          <button id="update-button" class="btn btn-sm roboto900iNav">UPDATE</button>
+          <button id="done-button" class="btn btn-sm light-it-up-inverse roboto900iNav">&#x2714; DONE</button>
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- LIST -->
   <ul id="list-page" class="hide">
     <!-- <li class="container">
       <div class="card list-card">
@@ -48,12 +54,13 @@
           <p class="roboto400">this is the thing we put here</p>
         </div>
         <div class="card-footer text-right custom-footer">
-          <button class="btn light-it-up">View</button>
+          <button class="view-button btn light-it-up">View</button>
         </div>
       </div>
     </li> -->
   </ul>
 
+  <!-- LOGIN -->
   <div id="login-page" class="container">
     <div class="vertical-center">
       <h1 class="roboto900i new-black">GET IT <span class="fire-text">DONE</span></h1>

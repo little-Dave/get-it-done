@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,900i&display=swap');
 
 .vertical-center {
   position: absolute;
@@ -8,20 +8,20 @@
 }
 
 .roboto300 {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #161925;
 }
 
 .roboto300i {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-style: italic;
   font-weight: 300;
   font-size: 28px;
 }
 
 .roboto400 {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 18px;
   color: #161925;
@@ -56,8 +56,8 @@
 .light-it-up-inverse {
   background-color: white;
   color: #FF3900;
-  border-color: #FF3900;
-  border-width: .05rem;
+  /* border-color: #FF3900; */
+  /* border-width: .05rem; */
 }
 
 .fire-text {
@@ -116,3 +116,44 @@ li {
   padding-top: 2.5rem;
 }
 
+#delete-icon {
+  color: white;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+#update-button {
+  background-color: #f7b538;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: -2.1rem;
+  margin-right: .5rem;
+  text-align: center;
+}
+
+#done-button {
+  margin-top: -2.1rem;
+  margin-right: .35rem;
+  text-align: center;
+}
+
+.view-button {
+  /* margin-top: .rem; */
+  margin-left: 64rem;
+  margin-top: .05rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+#back-to-list-icon {
+  color: white;
+  margin-top: 1rem;
+  display: inline-block
+}
+
+.line-up {
+  display: inline-block;
+}

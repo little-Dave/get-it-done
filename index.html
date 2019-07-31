@@ -18,16 +18,30 @@
 </head>
 
 <body id="body">
-  <nav id="nav" class="navbar white-background hide">
-    <span id="nav-text" class="navbar-text roboto900iNav">
-      GETTING IT <span class="fire-text">DONE </span> 
+  <nav id="nav" class="navbar white-background sticky-top hide">
+    <span id="nav-text" class="navbar-text roboto900iNav new-black">
+      <span id="nav-user" class="roboto300i"></span>GETTING IT <span class="fire-text">DONE </span> 
     </span>
-    <span id="leave" class="fas fa-sign-out-alt fa-lg"></span>
+    <span id="leave" class="fas fa-sign-out-alt fa-lg cursor-pointer"></span>
   </nav>
-  
-  <div id="login-page" class="container with-border">
+
+  <ul id="show-page" class="hide">
+    <!-- <li class="container">
+      <div class="card list-card">
+        <div class="card-body">
+          <h2 class="roboto900i">example</h2>  
+          <p class="roboto400">this is the thing we put here</p>
+        </div>
+        <div class="card-footer text-right custom-footer">
+          <button class="btn light-it-up">View</button>
+        </div>
+      </div>
+    </li> -->
+  </ul>
+
+  <div id="login-page" class="container">
     <div class="vertical-center">
-      <h1 class="roboto900i">GET IT <span class="fire-text">DONE</span></h1>
+      <h1 class="roboto900i new-black">GET IT <span class="fire-text">DONE</span></h1>
       <div class="form-group">
         <form id="login-form">
           <input type="text" class="form-control" name="username" placeholder="username"><br>
@@ -37,10 +51,6 @@
     </div>
   </div>
 
-  <ul id="projects-list">
-
-  </ul>
-  
 </body>
 
 </html>

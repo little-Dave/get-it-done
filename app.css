@@ -7,11 +7,17 @@
   transform: translateY(-50%);
 }
 
-.roboto400i {
+.roboto300i {
   font-family: "Roboto";
   font-style: italic;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 28px;
+}
+
+.roboto400 {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 18px;
 }
 
 .roboto900iNav {
@@ -19,6 +25,12 @@
   font-style: italic;
   font-weight: 900;
   font-size: 20px;
+}
+
+.roboto900 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 55px;
 }
 
 .roboto900i {
@@ -49,3 +61,31 @@
   background-color: white;
 }
 
+ul {
+  padding-top: 2.5rem; 
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+.list-card {
+  height: 12rem;
+  margin-bottom: 3rem;
+  /* padding-left: 1rem; */
+} 
+
+.custom-footer {
+  height: 3rem;
+  background-color: #161925;
+  padding-top: .25rem;
+}
+
+.new-black {
+  color: #161925;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

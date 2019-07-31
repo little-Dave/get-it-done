@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", function(){
   const loginPage = document.querySelector("#login-page")
   const listPage = document.querySelector("#list-page")
   const showPage = document.querySelector("#show-page")
+  const showPgTitle = document.querySelector("#show-page-title")
+  const showPgDescription = document.querySelector("#show-page-description")
+  const showPgNotes = document.querySelector("#show-page-notes")
+  const backToListIcon = document.querySelector("#back-to-list-icon")
   const body = document.querySelector("#body")
   const navbar = document.querySelector("#nav")
   const leave = document.querySelector("#leave")
@@ -48,9 +52,30 @@ document.addEventListener("DOMContentLoaded", function(){
     listPage.classList.remove("hide");
   }
 
+  function transitionToListFromShow(){
+    showPage.classList.add("hide");
+    listPage.classList.remove("hide");
+  }
+
+  backToListIcon.addEventListener("click", transitionToListFromShow)
+
   function transitionToShowProject(){
     listPage.classList.add("hide");
+    let thisProject = currentUser.projects.find(matchingProject);
+    showProjectOnCard(thisProject);
     showPage.classList.remove("hide");
+  }
+
+  function matchingProject(project){
+    if (project.id == event.target.name){
+    return project
+    }
+  }
+
+  function showProjectOnCard(thisProject){
+    showPgTitle.innerText = thisProject.name;
+    showPgDescription.innerText = thisProject.description;
+    showPgNotes.innerText = thisProject.notes;
   }
 
   function createProjectListCards(){
@@ -81,8 +106,9 @@ document.addEventListener("DOMContentLoaded", function(){
     thirdDiv.classList.add("card-footer", "text-right", "custom-footer");
 
     let button = document.createElement("button");
-    button.classList.add("btn", "light-it-up");
+    button.classList.add("btn", "light-it-up", "view-button", "btn-sm");
     button.innerText = "View";
+    button.name = project.id
     button.addEventListener("click", transitionToShowProject)
 
     secondDiv.append(h2, p);

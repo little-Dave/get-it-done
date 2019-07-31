@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   const loginForm = document.querySelector("#login-form")
   const loginPage = document.querySelector("#login-page")
+  const listPage = document.querySelector("#list-page")
   const showPage = document.querySelector("#show-page")
   const body = document.querySelector("#body")
   const navbar = document.querySelector("#nav")
@@ -17,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
     fetch(userUrl)
       .then(parseJson)
-      // .then(logResponse)
       .then(getCurrentUser)
       .then(hideLoginPage)
       .then(transitionToList)
@@ -36,15 +36,20 @@ document.addEventListener("DOMContentLoaded", function(){
     loginPage.classList.add("hide");
   }
 
-  function specifyNavText(){
-    navUser.innerText = `${currentUser.name.toUpperCase()}'s  `;
-  }
+  // function specifyNavText(){
+  //   navUser.innerText = `${currentUser.name.toUpperCase()}'s  `;
+  // }
 
   function transitionToList(){
     body.classList.add("off-white-background");
-    // specifyNavText();
+    // specifyNavText();      <<    this is to add user's name on navbar
     createProjectListCards();
     navbar.classList.remove("hide");
+    listPage.classList.remove("hide");
+  }
+
+  function transitionToShowProject(){
+    listPage.classList.add("hide");
     showPage.classList.remove("hide");
   }
 
@@ -78,12 +83,13 @@ document.addEventListener("DOMContentLoaded", function(){
     let button = document.createElement("button");
     button.classList.add("btn", "light-it-up");
     button.innerText = "View";
+    button.addEventListener("click", transitionToShowProject)
 
     secondDiv.append(h2, p);
     thirdDiv.append(button);
     firstDiv.append(secondDiv, thirdDiv);
     li.appendChild(firstDiv);
-    showPage.appendChild(li);
+    listPage.appendChild(li);
   }
 
   leave.addEventListener("mouseover", function(){

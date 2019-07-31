@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
   const loginForm = document.querySelector("#login-form")
   const loginPage = document.querySelector("#login-page")
+  const showPage = document.querySelector("#show-page")
   const body = document.querySelector("#body")
   const navbar = document.querySelector("#nav")
   const leave = document.querySelector("#leave")
-  const projectsList = document.querySelector("#projects-list")
   let navUser = document.querySelector("#nav-user")
   let currentUser = undefined
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     fetch(userUrl)
       .then(parseJson)
-      .then(logResponse)
+      // .then(logResponse)
       .then(getCurrentUser)
       .then(hideLoginPage)
       .then(transitionToList)
@@ -37,14 +37,53 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 
   function specifyNavText(){
-    navUser.innerText = `${currentUser.name}'s  `;
+    navUser.innerText = `${currentUser.name.toUpperCase()}'s  `;
   }
 
   function transitionToList(){
     body.classList.add("off-white-background");
     // specifyNavText();
+    createProjectListCards();
     navbar.classList.remove("hide");
-    projectsList.classList.remove("hide");
+    showPage.classList.remove("hide");
+  }
+
+  function createProjectListCards(){
+    for(const project of currentUser.projects) {
+      displayProjectListCard(project);
+    }
+  }
+
+  function displayProjectListCard(project){
+    let li = document.createElement("div");
+    li.classList.add("container");
+
+    let firstDiv = document.createElement("div");
+    firstDiv.classList.add("card", "list-card");
+
+    let secondDiv = document.createElement("div");
+    secondDiv.classList.add("card-body");
+ 
+    let h2 = document.createElement("h2");
+    h2.classList.add("roboto900i", "new-black");
+    h2.innerText = project.name;
+
+    let p = document.createElement("p");
+    p.classList.add("roboto400", "new-black");
+    p.innerText = project.description;
+
+    let thirdDiv = document.createElement("div");
+    thirdDiv.classList.add("card-footer", "text-right", "custom-footer");
+
+    let button = document.createElement("button");
+    button.classList.add("btn", "light-it-up");
+    button.innerText = "View";
+
+    secondDiv.append(h2, p);
+    thirdDiv.append(button);
+    firstDiv.append(secondDiv, thirdDiv);
+    li.appendChild(firstDiv);
+    showPage.appendChild(li);
   }
 
   leave.addEventListener("mouseover", function(){

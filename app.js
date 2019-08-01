@@ -6,13 +6,19 @@ document.addEventListener("DOMContentLoaded", function(){
   const createButtonDiv = document.querySelector("#create-button-div")
   const createButton = document.querySelector("#create-button")
   const createAndUpdatePage = document.querySelector("#create-and-update")
+  const h2CreateUpdate = document.querySelector("#h2-create-update")
+  const pCreateUpdate = document.querySelector("#p-create-update")
+  const boomButton = document.querySelector("#boom")
+  const patchUpdateButton = document.querySelector("#patch-update")
   const projectForm = document.querySelector("#project-form")
   const formBackToListIcon = document.querySelector("#form-back-to-list-icon")
+  const updateBackToListIcon = document.querySelector("#update-back-to-list-icon")
   const showPage = document.querySelector("#show-page")
   const showPgTitle = document.querySelector("#show-page-title")
   const showPgDescription = document.querySelector("#show-page-description")
   const showPgNotes = document.querySelector("#show-page-notes")
   const backToListIcon = document.querySelector("#back-to-list-icon")
+  const updateButton = document.querySelector("#update-button")
   const doneButton = document.querySelector("#done-button")
   const body = document.querySelector("#body")
   const navbar = document.querySelector("#nav")
@@ -126,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function(){
     showPgTitle.innerText = thisProject.name;
     showPgDescription.innerText = thisProject.description;
     showPgNotes.innerText = thisProject.notes;
+    updateButton.name = thisProject.id;
     doneButton.name = thisProject.id;
   }
 
@@ -200,6 +207,24 @@ document.addEventListener("DOMContentLoaded", function(){
     createAndUpdatePage.classList.add("hide");
   }
 
+  updateBackToListIcon.addEventListener("click", backToListFromUpdate)
+// ---------RIGHT HERE------------!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  function backToListFromUpdate(){
+    resetFormData();
+    h2CreateUpdate.innerHTML = "";
+    h2CreateUpdate.innerText = "Create new project";
+    pCreateUpdate.innerText = "Fill in the details below";
+    createAndUpdatePage.classList.add("hide");
+    boomButton.classList.remove("hide");
+    patchUpdateButton.classList.add("hide");
+    formBackToListIcon.classList.add("cursor-pointer", "fas", "fa-arrow-left", "fa-lg");
+    formBackToListIcon.classList.remove("hide");
+    updateBackToListIcon.classList.remove("cursor-pointer", "fas", "fa-arrow-left", "fa-lg");
+    updateBackToListIcon.classList.add("hide");
+    listPage.classList.remove("hide");
+    createButtonDiv.classList.remove("hide");
+  }
+
   function backToListFromCreate(){
     listPage.classList.remove("hide");
     createButtonDiv.classList.remove("hide");
@@ -238,7 +263,38 @@ document.addEventListener("DOMContentLoaded", function(){
       .then(getCurrentUser)
       .then(transitionToListFromCreate)
   }
+// ================================= U P D A T E stuff ============================
 
+  updateButton.addEventListener("click", transitionToUpdate)
+
+  function transitionToUpdate(){
+    showPage.classList.add("hide");
+    createButtonDiv.classList.add("hide");
+    let thisProject = currentUser.projects.find(matchingProject);
+    updateFormData(thisProject);
+    h2CreateUpdate.innerHTML = `Update '<span class="roboto400i">${thisProject.name}</span>'`;
+    pCreateUpdate.innerText = "Edit the details below";
+    boomButton.classList.add("hide");
+    formBackToListIcon.classList.remove("cursor-pointer", "fas", "fa-arrow-left", "fa-lg");
+    formBackToListIcon.classList.add("hide");
+    patchUpdateButton.classList.remove("hide");
+    updateBackToListIcon.classList.add("cursor-pointer", "fas", "fa-arrow-left", "fa-lg");
+    updateBackToListIcon.classList.remove("hide");
+    createAndUpdatePage.classList.remove("hide");
+  }
+
+  function updateFormData(thisProject){
+    projectForm.name.placeholder = `${thisProject.name}`;
+    projectForm.description.placeholder = `${thisProject.description}`;
+    projectForm.notes.placeholder = `${thisProject.notes}`;
+  }
+  
+  function resetFormData(){
+    projectForm.name.placeholder = "Project name";
+    projectForm.description.placeholder = "Short description";
+    projectForm.notes.placeholder = "Notes";
+  }
+  
   function logResponse(response){
     console.log(response);
     return response;

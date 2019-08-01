@@ -30,15 +30,17 @@
   <div id="create-and-update" class="container hide">
     <div class="card">
       <div class="card-body">
-        <h2 class="roboto900i">Create new project</h2>
-        <p class="roboto400">&nbsp;Fill in the details below</p><br>
+        <h2 id="h2-create-update" class="roboto900i">Create new project</h2>
+        <p id="p-create-update" class="roboto400">&nbsp;Fill in the details below</p><br>
         <form id="project-form">
           <input type="text" class="form-control" name="name" placeholder="Project name"><br>
           <input type="text" class="form-control" name="description" placeholder="Short description"><br>
           <textarea rows="9" type="text" class="form-control" name="notes" placeholder="Notes"></textarea><br>
           <div class="row justify-content-between">
             <span id="form-back-to-list-icon" class="cursor-pointer fas fa-arrow-left fa-lg align-self-start"></span>
+            <span id="update-back-to-list-icon" class="hide"></span>
             <input id="boom" type="submit" class="btn light-it-up align-self-end roboto400" value="Boom">
+            <input id="patch-update" type="submit" class="btn align-self-end roboto400 hide" value="Update">
           </div>
         </form>
       </div>

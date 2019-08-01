@@ -4,6 +4,11 @@ class ProjectsController < ApplicationController
     Project.create(allowed_params)
   end
 
+  def update
+    project = Project.find(params[:id])
+    project.update
+  end
+
   def destroy
     project = Project.find(params[:id])
     project.destroy

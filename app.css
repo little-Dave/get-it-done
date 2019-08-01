@@ -27,6 +27,16 @@
   color: #161925;
 }
 
+.roboto400i {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 55px;
+  color: #161925;
+}
+
+
+
 .roboto900iNav {
   font-family: "Roboto", sans-serif;
   font-style: italic;
@@ -140,6 +150,12 @@ li {
   text-align: center;
 }
 
+#patch-update {
+  margin-right: 1rem;
+  background-color: #f7b538;
+  color: white;
+}
+
 .view-button {
   /* margin-top: .rem; */
   margin-left: 64rem;
@@ -183,6 +199,11 @@ li {
 }
 
 #form-back-to-list-icon {
+  margin-top: .75rem;
+  margin-left: 1rem;
+}
+
+#update-back-to-list-icon {
   margin-top: .75rem;
   margin-left: 1rem;
 }

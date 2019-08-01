@@ -231,9 +231,9 @@ document.addEventListener("DOMContentLoaded", function(){
     createAndUpdatePage.classList.add("hide");
   }
 
-  projectForm.addEventListener("submit", function(){
+  boomButton.addEventListener("click", function(){
     event.preventDefault();
-    let formData = new FormData(event.target);
+    let formData = new FormData(projectForm);
     let name = formData.get("name");
     let description = formData.get("description");
     let notes = formData.get("notes");
@@ -271,6 +271,7 @@ document.addEventListener("DOMContentLoaded", function(){
     showPage.classList.add("hide");
     createButtonDiv.classList.add("hide");
     let thisProject = currentUser.projects.find(matchingProject);
+    patchUpdateButton.name = `${thisProject.id}`
     updateFormData(thisProject);
     h2CreateUpdate.innerHTML = `Update '<span class="roboto400i">${thisProject.name}</span>'`;
     pCreateUpdate.innerText = "Edit the details below";
@@ -284,11 +285,42 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 
   function updateFormData(thisProject){
-    projectForm.name.placeholder = `${thisProject.name}`;
-    projectForm.description.placeholder = `${thisProject.description}`;
-    projectForm.notes.placeholder = `${thisProject.notes}`;
+    projectForm.name.value = `${thisProject.name}`;
+    projectForm.description.value = `${thisProject.description}`;
+    projectForm.notes.value = `${thisProject.notes}`;
   }
   
+  patchUpdateButton.addEventListener("click", function(){
+    event.preventDefault();
+    let formData = new FormData(projectForm);
+    let name = formData.get("name");
+    let description = formData.get("description");
+    let notes = formData.get("notes");
+    let projectId = event.target.name
+    let body = {name: name, description: description, notes: notes};    
+
+    fetch(`${projectsUrl}${projectId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(body)
+    }).then(resetList).then(fetchToListFromUpdate)
+  })
+
+  function fetchToListFromUpdate(){
+    fetch(`${userBaseUrl}${currentUser.username}`)
+      .then(parseJson)
+      .then(getCurrentUser)
+      .then(transitionToListFromUpdate)
+  }
+
+  function transitionToListFromUpdate(){
+    createProjectListCards();
+    backToListFromUpdate();
+  }
+
   function resetFormData(){
     projectForm.name.placeholder = "Project name";
     projectForm.description.placeholder = "Short description";

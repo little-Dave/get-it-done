@@ -185,14 +185,22 @@ document.addEventListener("DOMContentLoaded", function(){
   createButton.addEventListener("click", transitionToCreate)
 
   function transitionToCreate(){
+    projectForm.reset();
     listPage.classList.add("hide");
     createButtonDiv.classList.add("hide");
     createAndUpdatePage.classList.remove("hide");
   }
 
-  formBackToListIcon.addEventListener("click", transitionToListFromCreate)
-
+  formBackToListIcon.addEventListener("click", backToListFromCreate)
+// -------------------------------------------
   function transitionToListFromCreate(){
+    createProjectListCards();
+    listPage.classList.remove("hide");
+    createButtonDiv.classList.remove("hide");
+    createAndUpdatePage.classList.add("hide");
+  }
+
+  function backToListFromCreate(){
     listPage.classList.remove("hide");
     createButtonDiv.classList.remove("hide");
     createAndUpdatePage.classList.add("hide");
@@ -204,8 +212,8 @@ document.addEventListener("DOMContentLoaded", function(){
     let name = formData.get("name");
     let description = formData.get("description");
     let notes = formData.get("notes");
-    let userId = currentUser.id
-    let body = {name: name, description: description, notes: notes, user_id: userId}
+    let userId = currentUser.id;
+    let body = {name: name, description: description, notes: notes, user_id: userId};    
 
     fetch(projectsUrl, {
       method: "POST",
@@ -214,8 +222,22 @@ document.addEventListener("DOMContentLoaded", function(){
         "Accept": "application/json"
       },
       body: JSON.stringify(body)
-    }).then(transitionToListFromCreate)
+    }).then(resetList).then(fetchToListFromCreate)
   })
+// ---------------------------------------------------------
+  function resetList(){
+    arrayOfChildren = Array.from(listPage.children);
+    for (const child in arrayOfChildren){
+      arrayOfChildren[child].remove();
+    }
+  }
+
+  function fetchToListFromCreate(){
+    fetch(`${userBaseUrl}${currentUser.username}`)
+      .then(parseJson)
+      .then(getCurrentUser)
+      .then(transitionToListFromCreate)
+  }
 
   function logResponse(response){
     console.log(response);

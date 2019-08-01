@@ -200,7 +200,21 @@ document.addEventListener("DOMContentLoaded", function(){
 
   projectForm.addEventListener("submit", function(){
     event.preventDefault();
+    let formData = new FormData(event.target);
+    let name = formData.get("name");
+    let description = formData.get("description");
+    let notes = formData.get("notes");
+    let userId = currentUser.id
+    let body = {name: name, description: description, notes: notes, user_id: userId}
 
+    fetch(projectsUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(body)
+    }).then(transitionToListFromCreate)
   })
 
   function logResponse(response){

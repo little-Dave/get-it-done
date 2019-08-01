@@ -144,7 +144,7 @@ li {
   margin-left: 64rem;
   margin-top: .05rem;
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-weight: 900;
   font-size: 18px;
 }
 
@@ -156,4 +156,32 @@ li {
 
 .line-up {
   display: inline-block;
+}
+
+.create-button {
+  background-color: #FF3900;
+  color: white;
+  border-color: #161925;
+  border-width: .01rem;
+  border-radius: .25rem;
+  margin-left: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+#create-button-div {
+  padding-bottom: 2rem;
+}
+
+#create-and-update {
+  margin-left: 10.5rem;
+  padding-top: 2.5rem;
+}
+
+#boom {
+  margin-right: 1rem;
+}
+
+#form-back-to-list-icon {
+  margin-top: .75rem;
+  margin-left: 1rem;
 }

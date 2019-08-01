@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", function(){
   const loginForm = document.querySelector("#login-form")
   const loginPage = document.querySelector("#login-page")
   const listPage = document.querySelector("#list-page")
+  const createButtonDiv = document.querySelector("#create-button-div")
+  const createButton = document.querySelector("#create-button")
+  const createAndUpdatePage = document.querySelector("#create-and-update")
+  const projectForm = document.querySelector("#project-form")
+  const formBackToListIcon = document.querySelector("#form-back-to-list-icon")
   const showPage = document.querySelector("#show-page")
   const showPgTitle = document.querySelector("#show-page-title")
   const showPgDescription = document.querySelector("#show-page-description")
@@ -54,11 +59,13 @@ document.addEventListener("DOMContentLoaded", function(){
     createProjectListCards();
     navbar.classList.remove("hide");
     listPage.classList.remove("hide");
+    createButtonDiv.classList.remove("hide");
   }
 
   function transitionToListFromShow(){
     showPage.classList.add("hide");
     listPage.classList.remove("hide");
+    createButtonDiv.classList.remove("hide");
   }
 
   backToListIcon.addEventListener("click", transitionToListFromShow)
@@ -90,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function(){
   function returnToUpdatedList(){
     showPage.classList.add("hide");
     listPage.classList.remove("hide");
+    createButtonDiv.classList.remove("hide");
     console.log(event.target)
   }
 
@@ -102,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   function transitionToShowProject(){
     listPage.classList.add("hide");
+    createButtonDiv.classList.add("hide");
     let thisProject = currentUser.projects.find(matchingProject);
     showProjectOnCard(thisProject);
     showPage.classList.remove("hide");
@@ -151,8 +160,9 @@ document.addEventListener("DOMContentLoaded", function(){
     let button = document.createElement("button");
     button.classList.add("btn", "light-it-up", "view-button", "btn-sm");
     button.innerText = "View";
-    button.name = project.id
-    button.addEventListener("click", transitionToShowProject)
+    button.type = "button";
+    button.name = project.id;
+    button.addEventListener("click", transitionToShowProject);
 
     secondDiv.append(h2, p);
     thirdDiv.append(button);
@@ -170,6 +180,27 @@ document.addEventListener("DOMContentLoaded", function(){
 
   leave.addEventListener("click", function(){
     location.reload();
+  })
+
+  createButton.addEventListener("click", transitionToCreate)
+
+  function transitionToCreate(){
+    listPage.classList.add("hide");
+    createButtonDiv.classList.add("hide");
+    createAndUpdatePage.classList.remove("hide");
+  }
+
+  formBackToListIcon.addEventListener("click", transitionToListFromCreate)
+
+  function transitionToListFromCreate(){
+    listPage.classList.remove("hide");
+    createButtonDiv.classList.remove("hide");
+    createAndUpdatePage.classList.add("hide");
+  }
+
+  projectForm.addEventListener("submit", function(){
+    event.preventDefault();
+
   })
 
   function logResponse(response){

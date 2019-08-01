@@ -26,6 +26,25 @@
     <span id="leave" class="fas fa-sign-out-alt fa-lg cursor-pointer"></span>
   </nav>
 
+  <!-- FORM FOR CREATE/UPDATE -->
+  <div id="create-and-update" class="container hide">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="roboto900i">Create new project</h2>
+        <p class="roboto400">&nbsp;Fill in the details below</p><br>
+        <form id="project-form">
+          <input type="text" class="form-control" name="name" placeholder="Project name"><br>
+          <input type="text" class="form-control" name="description" placeholder="Short description"><br>
+          <textarea rows="9" type="text" class="form-control" name="notes" placeholder="Notes"></textarea><br>
+          <div class="row justify-content-between">
+              <span id="form-back-to-list-icon" class="cursor-pointer fas fa-arrow-left fa-lg align-self-start"></span>
+            <input id="boom" type="submit" class="btn light-it-up align-self-end roboto400" value="Boom">
+          </div>
+          </form>
+      </div>
+    </div>
+  </div>
+
   <!-- SHOW -->
   <div id="show-page" class="container hide">
     <div class="card">
@@ -38,8 +57,8 @@
         <span id="back-to-list-icon" class="cursor-pointer fas fa-arrow-left fa-lg align-self-start"></span>
         <div class="row justify-content-end">
           <!-- <span id="delete-icon" class="far fa-trash-alt white-icon fa-lg"></span> -->
-          <button id="update-button" class="btn btn-sm roboto900iNav">UPDATE</button>
-          <button id="done-button" class="btn btn-sm light-it-up-inverse roboto900iNav" name="undefined">&#x2714; DONE</button>
+          <button id="update-button" type="button" class="btn btn-sm roboto900iNav">UPDATE</button>
+          <button id="done-button" type="button" class="btn btn-sm light-it-up-inverse roboto900iNav" name="undefined">&#x2714; DONE</button>
         </div>
       </div>
     </div>
@@ -59,6 +78,13 @@
       </div>
     </li> -->
   </ul>
+  <div id="create-button-div" class="container hide"><br>
+    <div class="row justify-content-center">
+      <button id="create-button" type="button" class="btn btn-lg create-button roboto900iNav">NEW PROJECT</button>
+    </div>
+  </div>
+
+  
 
   <!-- LOGIN -->
   <div id="login-page" class="container">
@@ -67,7 +93,7 @@
       <div class="form-group">
         <form id="login-form">
           <input type="text" class="form-control" name="username" placeholder="username"><br>
-          <input type="submit" class="btn light-it-up" value="Do It">
+          <input type="submit" class="btn light-it-up roboto400" value="Do It">
         </form>
       </div>
     </div>

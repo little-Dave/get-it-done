@@ -29,13 +29,18 @@
 -----------------------------------------------------------------------------------------------------------------------------------
 
 
+
 **The app uses these versions:**
 - Ruby  version 2.6.1p33
 - Rails version 5.2.3
 
 
-**Get 
+**Install lite-server**
+>Lightweight development only node server that serves a web app, opens it in the browser, refreshes when html or javascript change, >injects CSS changes using sockets, and has a fallback page when a route is not found.
 
+- https://www.npmjs.com/package/lite-server
+
+(alternatively, you can 
 
 **Once you've cloned the repo, make sure to run the following commands from the app's directory:**
  - `bundle install`

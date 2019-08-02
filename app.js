@@ -38,13 +38,14 @@ document.addEventListener("DOMContentLoaded", function(){
 
     fetch(userUrl)
       .then(parseJson)
+      .then(logResponse)
       // .then(determineUserPath)
       .then(getCurrentUser)
       .then(hideLoginPage)
       .then(transitionToList)
 
   })
-  
+
 // DON'T FORGET TO CHANGE BACK TO OFF-WHITE BACKGROUND!
   // function determineUserPath(response){
   //   if (response == null || undefined){

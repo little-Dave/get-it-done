@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(username: "test", name: "Paul")
-User.create(username: "testing", name: "Mike")
-User.create(username: "tested", name: "Dan")
+User.create(username: "pault", name: "Paul")
+User.create(username: "miket", name: "Mike")
+User.create(username: "daveb", name: "Dave")
 
 Project.create(name: "Mod 3 project", description: "Asynchronous SPA using vJS and Rails", notes: "Mustache copper mug hell of velit coloring book asymmetrical. Authentic 3 wolf moon irure poke organic veniam celiac chillwave enim eu tofu gluten-free vexillologist occaecat. Mumblecore commodo roof party, meditation dreamcatcher veniam ramps exercitation offal narwhal 90's sriracha incididunt. Ad deserunt thundercats man braid live-edge glossier mollit umami dolor vape snackwave. Locavore semiotics wolf man bun aliquip. Consequat hella marfa stumptown try-hard et cred.
   Small batch irony green juice, butcher hot chicken vape stumptown kickstarter man bun lumbersexual pork belly twee. Commodo culpa squid four dollar toast. Intelligentsia franzen tumeric brunch. La croix pork belly sed twee synth man braid, slow-carb veniam elit.

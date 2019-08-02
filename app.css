@@ -27,6 +27,14 @@
   color: #161925;
 }
 
+.roboto400iSm {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: italic;
+  /* color: #161925; */
+}
+
 .roboto400i {
   font-family: "Roboto", sans-serif;
   font-weight: 400;

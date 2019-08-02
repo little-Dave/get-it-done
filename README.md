@@ -1,18 +1,18 @@
 # README
 
-Create a new project
+                                                     Create a new project
 
 ![](getItDone_create.gif)
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
-Update an existing project
+                                                   Update an existing project
 
 ![](getItDone_update.gif)
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
-Delete completed projects
+                                                   Delete completed projects
 
 ![](getItDone_delete.gif)
 

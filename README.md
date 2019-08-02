@@ -30,15 +30,15 @@
 
 The app uses these versions:
 
-> Ruby  version 2.6.1p33
-> Rails version 5.2.3
+- Ruby  version 2.6.1p33
+- Rails version 5.2.3
 
 Once you've cloned the repo, make sure to run the following commands from the app's directory:
- > bundle install
- > rails db:create
- > rails db:migrate
- > (check out app/db/seeds.rb -- you can customize and add your own user and project objects here; the ability to add a user from the front-end is not yet implemented)
- > rails db:seed
+ - bundle install
+ - rails db:create
+ - rails db:migrate
+ - rails db:seed
+   - (check out app/db/seeds.rb -- you can customize and add your own user and project objects here; the ability to add a user from the front-end is not yet implemented)
  
  
 

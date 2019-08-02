@@ -60,7 +60,7 @@
 * Also, shout out to the peeps who contribute to Google Fonts (*GET IT DONE* uses Roboto) & FontAwesome (exit icon and back arrows). Thank you
 
 
-Thanks for stopping by :thumbs up: 
+Thanks for stopping by :thumbsup: 
 
 
                     “Experience is the name everyone gives to their mistakes.” 

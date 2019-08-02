@@ -1,15 +1,21 @@
 # README
 
-![](getItDone_create.gif)
 Create a new project
+
+![](getItDone_create.gif)
+
 -----------------------------------------------------------------------------------------------------------------------------------
+
+Update an existing project
 
 ![](getItDone_update.gif)
-Update an existing project
+
 -----------------------------------------------------------------------------------------------------------------------------------
 
-![](getItDone_delete.gif)
 Delete completed projects
+
+![](getItDone_delete.gif)
+
 -----------------------------------------------------------------------------------------------------------------------------------
 
 This README would normally document whatever steps are necessary to get the

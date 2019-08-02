@@ -40,7 +40,7 @@
 
 - https://www.npmjs.com/package/lite-server
 
-(alternatively, you can 
+(alternatively, you can just paste the path to index.html into your browser's address bar)
 
 **Once you've cloned the repo, make sure to run the following commands from the app's directory:**
  - `bundle install`
@@ -51,8 +51,17 @@
  
  
 **Run the app**
-After you've completed the steps listed above, run `rails s` 
-
+-After you've completed the steps listed above, run `rails s` 
+-If you installed lite-server, open another terminal and type `lite-server`, otherwise, just paste the path as mentioned above.
  
 
 * There is no test suite
+
+
+
+
+Thanks for stopping by!
+
+
+                    “Experience is the name everyone gives to their mistakes.” 
+                                                                               – Oscar Wilde

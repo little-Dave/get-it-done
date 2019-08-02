@@ -47,7 +47,7 @@
  - `rails db:create`
  - `rails db:migrate`
  - `rails db:seed`
-   - (check out app/db/seeds.rb -- you can customize and add your own user and project objects here; the ability to add a user from the front-end is not yet implemented)
+    - (check out app/db/seeds.rb -- you can customize and add your own user and project objects here; the ability to add a user from the front-end is yet to be implemented)
  
  
 **Run the app**
@@ -56,11 +56,11 @@
  
 
 * There is no test suite
+* Props to the guys and girls at https://hipsum.co/ -- thanks for the hilarity
+* Also, shout out to the peeps who contribute to Google Fonts (*GET IT DONE* uses Roboto) & FontAwesome (exit icon and back arrows). Thank you
 
 
-
-
-Thanks for stopping by!
+Thanks for stopping by :sunglasses: 
 
 
                     “Experience is the name everyone gives to their mistakes.” 

@@ -58,7 +58,7 @@
 * There is no test suite
 * Props to the guys and girls at https://hipsum.co/ -- thanks for the hilarity
 * Also, shout out to the peeps who contribute to Google Fonts (*GET IT DONE* uses Roboto) & FontAwesome (exit icon and back arrows). Thank you
-
+* OH, AND... almost forgot, https://coolors.co/ . Color matching made easy. Super cool UI, too
 
 Thanks for stopping by :thumbsup: 
 

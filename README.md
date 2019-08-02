@@ -28,18 +28,25 @@
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
-The app uses these versions:
-
+**The app uses these versions:**
 - Ruby  version 2.6.1p33
 - Rails version 5.2.3
 
-Once you've cloned the repo, make sure to run the following commands from the app's directory:
- - bundle install
- - rails db:create
- - rails db:migrate
- - rails db:seed
+
+**Get 
+
+
+**Once you've cloned the repo, make sure to run the following commands from the app's directory:**
+ - `bundle install`
+ - `rails db:create`
+ - `rails db:migrate`
+ - `rails db:seed`
    - (check out app/db/seeds.rb -- you can customize and add your own user and project objects here; the ability to add a user from the front-end is not yet implemented)
  
  
+**Run the app**
+After you've completed the steps listed above, run `rails s` 
 
-There is no test suite
+ 
+
+* There is no test suite

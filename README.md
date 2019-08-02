@@ -1,8 +1,13 @@
 # README
 
 ![](getItDone_create.gif)
+Create a New Project
+
 ![](getItDone_update.gif)
+Update and existing project
+
 ![](getItDone_delete.gif)
+Delete completed projects
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

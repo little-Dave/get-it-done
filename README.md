@@ -1,6 +1,8 @@
 # README
 
 ![](getItDone_create.gif)
+![](getItDone_update.gif)
+![](getItDone_delete.gif)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

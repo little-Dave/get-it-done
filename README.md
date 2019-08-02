@@ -28,25 +28,18 @@
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The app uses these versions:
 
-Things you may want to cover:
+> Ruby  version 2.6.1p33
+> Rails version 5.2.3
 
-* Ruby version
+Once you've cloned the repo, make sure to run the following commands from the app's directory:
+ > bundle install
+ > rails db:create
+ > rails db:migrate
+ > (check out app/db/seeds.rb -- you can customize and add your own user and project objects here; the ability to add a user from the front-end is not yet implemented)
+ > rails db:seed
+ 
+ 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+There is no test suite

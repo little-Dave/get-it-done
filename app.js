@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function(){
       .then(transitionToList)
 
   })
+  
 // DON'T FORGET TO CHANGE BACK TO OFF-WHITE BACKGROUND!
   // function determineUserPath(response){
   //   if (response == null || undefined){

@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   const loginForm = document.querySelector("#login-form")
   const loginPage = document.querySelector("#login-page")
+  const addUserNameForm = document.querySelector("#add-user-name")
   const listPage = document.querySelector("#list-page")
   const createButtonDiv = document.querySelector("#create-button-div")
   const createButton = document.querySelector("#create-button")
@@ -32,17 +33,61 @@ document.addEventListener("DOMContentLoaded", function(){
   loginForm.addEventListener("submit", function(){
     event.preventDefault();
     let formData = new FormData(event.target);
-    let username = formData.get("username");
-    let userUrl = `http://localhost:3000/users/${username}`
+    let username = (formData.get("username")).toLowerCase();
+    let userUrl = `http://localhost:3000/users/${username}`;
 
     fetch(userUrl)
       .then(parseJson)
+      // .then(determineUserPath)
       .then(getCurrentUser)
       .then(hideLoginPage)
       .then(transitionToList)
 
   })
-  
+// DON'T FORGET TO CHANGE BACK TO OFF-WHITE BACKGROUND!
+  // function determineUserPath(response){
+  //   if (response == null || undefined){
+  //     body.classList.add("white-background");
+  //     hideLoginPage();
+  //     addUserNameForm.classList.remove("hide");
+  //   } else {
+  //     currentUser = response;
+  //     return response;
+  //   }
+  // }
+
+  // addUserNameForm.addEventListener("submit", function(){
+  //   event.preventDefault();
+  //   let formData = new FormData(event.target);
+  //   let newUserName = formData.get("name");
+  //   let username2 = formData.get("username2");
+  //   let body = {username: username2, name: newUserName};
+
+  //   fetch(userBaseUrl, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-type": "application/json",
+  //       "Accept": "application/json"
+  //     },
+  //     body: JSON.stringify(body)
+  //   })
+  //   return username2;
+  // })
+
+    
+  // // function fetchNewUser(username2){
+  //   fetch(`${userBaseUrl}${username2}`)
+  //     .then(parseJson)
+  //     .then(getCurrentUser)
+  //     .then(hideAddUserForm)
+  //     .then(transitionToList)
+  // // }
+
+  // function hideAddUserForm(){
+  //   addUserNameForm.classList.add("hide");
+  //   body.classList.remove("white-background");
+  // }
+
   function parseJson(response){
     return response.json();
   }
@@ -55,18 +100,22 @@ document.addEventListener("DOMContentLoaded", function(){
     loginPage.classList.add("hide");
   }
 
-  // function specifyNavText(){
-  //   navUser.innerText = `${currentUser.name.toUpperCase()}'s  `;
-  // }
+  function specifyNavText(){
+    navUser.innerText = `${currentUser.name.toUpperCase()}'s  `;
+  }
 
   function transitionToList(){
     body.classList.add("off-white-background");
-    // specifyNavText();      <<    this is to add user's name on navbar
+    //    this is to add user's name on navbar
+    specifyNavText();      
     createProjectListCards();
     navbar.classList.remove("hide");
     listPage.classList.remove("hide");
     createButtonDiv.classList.remove("hide");
   }
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
 
   function transitionToListFromShow(){
     showPage.classList.add("hide");

@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", function(){
   const navbar = document.querySelector("#nav")
   const leave = document.querySelector("#leave")
   let navUser = document.querySelector("#nav-user")
-  let currentUser = undefined
+  // changed below from 'let currentUser = undfined' (sunday 8/4)
+  let currentUser;
   let userBaseUrl = `http://localhost:3000/users/`
   let projectsUrl = `http://localhost:3000/projects/`
   
@@ -38,13 +39,39 @@ document.addEventListener("DOMContentLoaded", function(){
 
     fetch(userUrl)
       .then(parseJson)
-      .then(logResponse)
-      // .then(determineUserPath)
-      .then(getCurrentUser)
-      .then(hideLoginPage)
-      .then(transitionToList)
+      // .then(logResponse)
+      .then(determineUserPath)
+      // .then(getCurrentUser)
+      // .then(hideLoginPage)
+      // .then(transitionToList)
 
   })
+
+
+  function determineUserPath(response){
+    if (!!response) {
+      returningUserLoginPath(response);
+    } else {
+      newUserLoginPath();
+    }
+  }
+
+  function returningUserLoginPath(response) {
+    getCurrentUser(response)
+    hideLoginPage(response)
+    transitionToList(response)
+  }
+
+  function newUserLoginPath(){
+    body.classList.add("white-background");
+    hideLoginPage();
+    addUserNameForm.classList.remove("hide");
+  }
+
+
+
+// parse logic below to see what's needed for false loginPath key values; test true with above logic first  
+
 
 // DON'T FORGET TO CHANGE BACK TO OFF-WHITE BACKGROUND!
   // function determineUserPath(response){
@@ -58,23 +85,23 @@ document.addEventListener("DOMContentLoaded", function(){
   //   }
   // }
 
-  // addUserNameForm.addEventListener("submit", function(){
-  //   event.preventDefault();
-  //   let formData = new FormData(event.target);
-  //   let newUserName = formData.get("name");
-  //   let username2 = formData.get("username2");
-  //   let body = {username: username2, name: newUserName};
+  addUserNameForm.addEventListener("submit", function(){
+    event.preventDefault();
+    let formData = new FormData(event.target);
+    let newUser = formData.get("name");
+    let username2 = formData.get("username2").toLowerCase();
+    let body = {username: username2, name: newUser};
 
-  //   fetch(userBaseUrl, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-type": "application/json",
-  //       "Accept": "application/json"
-  //     },
-  //     body: JSON.stringify(body)
-  //   })
-  //   return username2;
-  // })
+    fetch(userBaseUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(body)
+    })
+    location.reload();
+  })
 
     
   // // function fetchNewUser(username2){

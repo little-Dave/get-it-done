@@ -54,7 +54,7 @@
  
 
 * Props to the girls and guys at https://hipsum.co/ -- thanks for the hilarity
-* Also, shout out to the peeps who contribute to https://fonts.google.com/ (*GET IT DONE* uses Roboto) & https://fontawesome.com/?from=io (exit icon and back arrows). Thank you
+* Also, shout out to the peeps behind https://fonts.google.com/ (*GET IT DONE* uses Roboto) & https://fontawesome.com/?from=io (exit icon and back arrows). Thank you
 * OH, AND... almost forgot, https://coolors.co/ . Color matching made easy. Super cool UI, too
 
 Thanks for stopping by :thumbsup: 

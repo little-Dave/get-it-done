@@ -53,13 +53,9 @@
 -If you installed lite-server, open another terminal and type `lite-server`, otherwise, just paste the path as mentioned above.
  
 
-* There is no test suite
 * Props to the girls and guys at https://hipsum.co/ -- thanks for the hilarity
 * Also, shout out to the peeps who contribute to https://fonts.google.com/ (*GET IT DONE* uses Roboto) & https://fontawesome.com/?from=io (exit icon and back arrows). Thank you
 * OH, AND... almost forgot, https://coolors.co/ . Color matching made easy. Super cool UI, too
 
 Thanks for stopping by :thumbsup: 
 
-
-                    “Experience is the name everyone gives to their mistakes.” 
-                                                                               – Oscar Wilde

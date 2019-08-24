@@ -4,9 +4,7 @@
   
  Users can **create** new and **view** current projects from the app's dashboard.
  Options to **update** or **complete** (and remove from list) are available on the project's show card. 
- 
- Future functionality will allow users to keep track of progress/to-do's with an integrated 'deliverables' list.
- Ability to display web addresses and photo tiles will also be implemented. 
+
 
 
 
